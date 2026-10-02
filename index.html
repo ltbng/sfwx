@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>无聊的网站</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f9;
+            color: #333;
+            margin: 0;
+            padding: 20px;
+        }
+        .container {
+            max-width: 600px;
+            margin: auto;
+            text-align: center;
+        }
+        h1 {
+            color: #5c67f2;
+        }
+        .fact, .joke {
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            margin: 20px 0;
+            padding: 20px;
+            transition: transform 0.2s;
+        }
+        .fact:hover, .joke:hover {
+            transform: scale(1.02);
+        }
+        button {
+            background-color: #5c67f2;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            cursor: pointer;
+            border-radius: 5px;
+            transition: background-color 0.3s;
+        }
+        button:hover {
+            background-color: #4a54d4;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>欢迎来到无聊的网站！</h1>
+        <div class="fact">
+            <p><strong>无聊的事实:</strong></p>
+            <p>为什么电脑生病了？因为它无聊了。</p>
+        </div>
+        <div class="fact">
+            <p><strong>无聊提示:</strong></p>
+            <p id="joke-text">你真无聊！！！</p>
+        </div>
+    </div>
+
+</body>
+</html>
