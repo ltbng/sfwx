@@ -2,7 +2,7 @@
 <html lang="zh-CN">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, user-scalable=yes">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
 
     <!-- === SEO元标签优化（高优先级）=== -->
@@ -496,6 +496,72 @@
         .lightbox-prev { left: 20px; }
         .lightbox-next { right: 20px; }
         .lightbox-counter { color: rgba(255,255,255,0.7); font-size: 16px; margin-top: 15px; }
+        /* === 手机端灯箱兼容性修复 === */
+        @media (max-width: 768px) {
+            .lightbox-content {
+                width: 100%;
+                height: 100%;
+                max-width: 100%;
+                padding: 50px 10px 50px 10px;
+                box-sizing: border-box;
+            }
+            .lightbox-main-img {
+                max-width: 100%;
+                max-height: calc(100vh - 100px);
+                max-height: calc(100dvh - 100px);
+                width: auto;
+                height: auto;
+                object-fit: contain;
+                border-radius: 4px;
+                -webkit-tap-highlight-color: transparent;
+                touch-action: none;
+            }
+            .lightbox-close {
+                top: 12px;
+                right: 15px;
+                font-size: 32px;
+                padding: 10px;
+                z-index: 10001;
+                -webkit-tap-highlight-color: transparent;
+            }
+            .lightbox-prev, .lightbox-next {
+                top: auto;
+                bottom: 80px;
+                transform: none;
+                font-size: 36px;
+                padding: 15px 12px;
+                z-index: 10001;
+                -webkit-tap-highlight-color: transparent;
+            }
+            .lightbox-prev {
+                left: 5px;
+            }
+            .lightbox-next {
+                right: 5px;
+            }
+            .lightbox-counter {
+                margin-top: 10px;
+                font-size: 14px;
+                position: absolute;
+                bottom: 30px;
+                left: 50%;
+                transform: translateX(-50%);
+                z-index: 10001;
+            }
+            .lightbox.show {
+                position: fixed;
+                top: 0;
+                left: 0;
+                width: 100vw;
+                height: 100dvh;
+                height: 100vh;
+            }
+            .lightbox-content {
+                position: relative;
+                width: 100%;
+                height: 100%;
+            }
+        }
 
         /* === 悬浮拨号按钮（新增，提升移动端转化）=== */
         .float-call {
@@ -700,7 +766,6 @@
                         <span class="case-tag">维修：床头软包</span>
                         <img src='img/rb/1.jpg' alt='襄阳床头软包修复-深度清洁去污重新包边加固' class='case-main-img'>
                         <div class="case-thumb-list">
-                            <img src='img/rb/1.jpg' alt='襄阳床头软包修复前-发黄塌陷' class='case-thumb active' data-index='0'>
                             <img src='img/rb/2.jpg' alt='襄阳床头软包修复中-更换高回弹海绵' class='case-thumb' data-index='1'>
                             <img src='img/rb/3.jpg' alt='襄阳床头软包修复后-恢复如新效果' class='case-thumb' data-index='2'>
                         </div>
@@ -715,10 +780,13 @@
                         <span class="case-tag">维修：沙发维修翻新</span>
                         <img src='img/sf/1.jpg' alt='襄阳沙发维修翻新-真皮破损修复布艺塌陷更换' class='case-main-img'>
                         <div class="case-thumb-list">
-                            <img src='img/sf/1.jpg' alt='襄阳沙发维修翻新前-真皮破损塌陷' class='case-thumb active' data-index='0'>
-                            <img src='img/sf/2.jpg' alt='襄阳沙发维修翻新中-加固内部框架' class='case-thumb' data-index='1'>
-                            <img src='img/sf/3.jpg' alt='襄阳沙发维修翻新中-更换专业面料' class='case-thumb' data-index='2'>
-                            <img src='img/sf/4.jpg' alt='襄阳沙发维修翻新后-质感如新品' class='case-thumb' data-index='3'>
+                            <img src='img/sf/2.jpg' alt='襄阳沙发维修' class='case-thumb' data-index='1'>
+                            <img src='img/sf/3.jpg' alt='襄阳沙发维修' class='case-thumb' data-index='2'>
+                            <img src='img/sf/4.jpg' alt='襄阳沙发维修' class='case-thumb' data-index='3'>
+							<img src='img/sf/5.jpg' alt='襄阳沙发维修' class='case-thumb' data-index='4'>
+							<img src='img/sf/6.jpg' alt='襄阳沙发维修' class='case-thumb' data-index='5'>
+							<img src='img/sf/7.jpg' alt='襄阳沙发维修' class='case-thumb' data-index='6'>
+							<img src='img/sf/8.jpg' alt='襄阳沙发维修' class='case-thumb' data-index='7'>
                         </div>
                     </div>
                     <div class="case-desc">
@@ -731,11 +799,9 @@
                         <span class="case-tag">维修：椅子换面维修</span>
                         <img src='img/yz/1.jpg' alt='襄阳椅子换皮换面-办公椅餐椅耐磨面料更换' class='case-main-img'>
                         <div class="case-thumb-list">
-                            <img src='img/yz/1.jpg' alt='襄阳椅子换面维修前-坐垫变硬摇晃' class='case-thumb active' data-index='0'>
-                            <img src='img/yz/2.jpg' alt='襄阳椅子换面维修中-拆卸旧面料' class='case-thumb' data-index='1'>
-                            <img src='img/yz/3.jpg' alt='襄阳椅子换面维修中-安装新面料' class='case-thumb' data-index='2'>
-                            <img src='img/yz/4.jpg' alt='襄阳椅子换面维修中-加固框架' class='case-thumb' data-index='3'>
-                            <img src='img/yz/5.jpg' alt='襄阳椅子换面维修后-造型挺括美观' class='case-thumb' data-index='4'>
+                            <img src='img/yz/2.jpg' alt='襄阳椅子换面维修中' class='case-thumb' data-index='1'>
+                            <img src='img/yz/3.jpg' alt='襄阳椅子换面维修中' class='case-thumb' data-index='2'>
+                            <img src='img/yz/4.jpg' alt='襄阳椅子换面维修中' class='case-thumb' data-index='3'>
                         </div>
                     </div>
                     <div class="case-desc">
@@ -774,7 +840,7 @@
                 <div class="faq-item">
                     <div class="faq-question">襄阳沙发维修翻新大概需要多少钱？</div>
                     <div class="faq-answer">
-                        <p>价格主要取决于沙发的尺寸、损坏程度以及您选择的更换面料。我们承诺免费上门看货报价，绝不乱收费。一般单人沙发换皮在300-500元，三人位沙发翻新在800-1500元左右，具体以现场评估为准。电话/微信：15671612099，欢迎随时咨询。</p>
+                        <p>价格主要取决于沙发的尺寸、损坏程度以及您选择的更换面料。我们承诺免费上门看货报价，绝不乱收费。电话/微信：15671612099，欢迎随时咨询。</p>
                     </div>
                 </div>
                 <div class="faq-item">
@@ -820,7 +886,7 @@
                     <div class="contact-icon">&#9997;</div>
                     <h3>微信咨询</h3>
                     <p>加微信发送照片，在线估价</p>
-                    <span class="contact-wechat">15671612099（同电话）</span>
+                    <a href="tel:15671612099" class="contact-wechat">15671612099（同电话）</a>
                 </div>
                 <div class="contact-card">
                     <div class="contact-icon">&#9733;</div>
@@ -859,10 +925,6 @@
 
     <script>
     (function() {
-        // === 移除：禁止右键菜单和屏蔽开发者工具 ===
-        // 原因：这些操作会阻止搜索引擎爬虫正常抓取页面内容，严重影响SEO
-        // 搜索引擎需要使用开发者工具功能来索引页面
-
         // 图片灯箱功能
         document.querySelectorAll('.case-multi-img').forEach(function(imgBox) {
             var caseId = imgBox.getAttribute('data-case-id');
@@ -905,6 +967,8 @@
         function closeLightbox() {
             lightbox.classList.remove('show');
             document.body.style.overflow = '';
+            lightboxImg.style.transform = '';
+            lightboxImg.scale = 1;
         }
         function showImage(index) {
             if (index < 0) index = currentCaseImages.length - 1;
@@ -912,6 +976,8 @@
             currentIndex = index;
             lightboxImg.src = currentCaseImages[currentIndex];
             lightboxCounter.textContent = (currentIndex + 1) + ' / ' + currentCaseImages.length;
+            lightboxImg.style.transform = '';
+            lightboxImg.scale = 1;
         }
         function nextImage() { showImage(currentIndex + 1); }
         function prevImage() { showImage(currentIndex - 1); }
@@ -927,18 +993,66 @@
             if (e.key === 'ArrowRight') nextImage();
             if (e.key === 'ArrowLeft') prevImage();
         });
-        var touchStartX = 0, touchEndX = 0;
+        var touchStartX = 0, touchEndX = 0, touchStartY = 0, touchStartDistance = 0;
+        // === 移动端灯箱触摸优化 ===
         lightbox.addEventListener('touchstart', function(e) {
-            touchStartX = e.changedTouches[0].screenX;
+            if (e.touches.length === 1) {
+                touchStartX = e.changedTouches[0].screenX;
+                touchStartY = e.changedTouches[0].screenY;
+            } else if (e.touches.length === 2) {
+                var dx = e.touches[0].pageX - e.touches[1].pageX;
+                var dy = e.touches[0].pageY - e.touches[1].pageY;
+                touchStartDistance = Math.sqrt(dx * dx + dy * dy);
+                touchStartScale = lightboxImg.scale || 1;
+            }
         }, {passive: true});
+
+        lightbox.addEventListener('touchmove', function(e) {
+            if (lightboxImg.scale && lightboxImg.scale > 1 && e.touches.length === 2) {
+                e.preventDefault();
+                var dx = e.touches[0].pageX - e.touches[1].pageX;
+                var dy = e.touches[0].pageY - e.touches[1].pageY;
+                var currentDistance = Math.sqrt(dx * dx + dy * dy);
+                var newScale = Math.max(1, Math.min(3, touchStartScale * (currentDistance / touchStartDistance)));
+                lightboxImg.style.transform = 'scale(' + newScale + ')';
+                lightboxImg.scale = newScale;
+            } else {
+                e.preventDefault();
+            }
+        }, {passive: false});
+
         lightbox.addEventListener('touchend', function(e) {
-            touchEndX = e.changedTouches[0].screenX;
-            var diff = touchStartX - touchEndX;
-            if (Math.abs(diff) > 50) {
+            if (lightboxImg.scale && lightboxImg.scale > 1) {
+                return;
+            }
+            var changedTouch = e.changedTouches[0];
+            var diff = touchStartX - changedTouch.screenX;
+            var deltaY = Math.abs(touchStartY - changedTouch.screenY);
+            if (Math.abs(diff) > 50 && Math.abs(diff) > deltaY) {
                 if (diff > 0) nextImage();
                 else prevImage();
             }
-        }, {passive: true});
+            lightboxImg.style.transform = '';
+            lightboxImg.scale = 1;
+        }, {passive: false});
+
+        // 双击图片放大/缩小
+        var lastTap = 0;
+        lightboxImg.addEventListener('touchstart', function(e) {
+            var now = Date.now();
+            if (now - lastTap < 300) {
+                e.preventDefault();
+                if (lightboxImg.scale && lightboxImg.scale > 1) {
+                    lightboxImg.style.transform = '';
+                    lightboxImg.scale = 1;
+                } else {
+                    lightboxImg.style.transform = 'scale(2)';
+                    lightboxImg.style.transition = 'transform 0.2s ease';
+                    lightboxImg.scale = 2;
+                }
+            }
+            lastTap = now;
+        }, {passive: false});
 
         // === FAQ折叠功能 ===
         document.querySelectorAll('.faq-question').forEach(function(q) {
